@@ -1,12 +1,12 @@
 package com.example.finalexam01
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.auth.FirebaseAuth
 
 class SingUpActivity : AppCompatActivity() {
@@ -44,7 +44,7 @@ class SingUpActivity : AppCompatActivity() {
                     firebaseAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener { task ->
                             if (task.isSuccessful) {
-                                startActivity(Intent(this, MainActivity::class.java))
+                                startActivity(Intent(this, Person::class.java))
                                 finish()
                             } else {
                                 Toast.makeText(this, "Error", Toast.LENGTH_SHORT).show()
